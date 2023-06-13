@@ -1,0 +1,30 @@
+<section>
+    <div class="cardapio-container">
+        <app-titulo titulo="Cardápio"></app-titulo>
+
+        <h2 class="subtitulo">Comidas</h2>
+        <ul class="comidas">
+            <li *ngFor="let comida of comidas">
+                     <app-card-cardapio 
+                    urlImagem="{{ comida.foto }}"
+                    nome="{{ comida.nome }}"
+                    descricao="{{ comida.descricao }}"
+                    preco="{{ comida.preco}}"
+                ></app-card-cardapio>
+            </li>
+        </ul>
+
+        <h2 class="subtitulo">Bebidas</h2>
+        <ul class="bebidas">
+            <li *ngFor="let bebida of bebidas">
+                <app-card-cardapio
+                    urlImagem="{{ bebida.foto }}"
+                    nome="{{ bebida.nome }}"
+                    descricao="{{ bebida.descricao }}"
+                    preco="{{ bebida.preco }}"
+                ></app-card-cardapio>
+            </li>
+        </ul>
+
+    </div>
+</section>

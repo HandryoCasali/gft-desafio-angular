@@ -1,0 +1,29 @@
+<section class="cadastrar">
+    <div class="cadastrar-container">
+        <div class="cadastrar__form">
+            <app-titulo titulo="Agendar"></app-titulo>
+            
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <label for="data">Data: <span>*</span></label>
+                    <input type="text" placeholder="Digite a data do agendamento" name="data" required [(ngModel)]="agendamento.data" #data="ngModel">
+                    <div *ngIf="(!data.valid && data.touched) || (!data.valid && form.submitted)">
+                        <span>Data é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="hora">hora: <span>*</span></label>
+                    <input type="text" placeholder="Digite a hora do agendamento" name="hora" required [(ngModel)]="agendamento.hora" #hora="ngModel">
+                    <div *ngIf="(!hora.valid && hora.touched) || (!hora.valid && form.submitted)">
+                        <span>Hora é obrigatório.</span>
+                    </div>
+                </div>
+                
+                <div *ngIf="mensagemErro">
+                    <p class="error">{{ mensagemErro }}</p>
+                </div>
+                <input type="submit" value="Agendar">
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+<section class="login">
+    <div class="login-container">
+        <div class="login__imagem">
+            <img src="../../../assets/images/homer-login.png" alt="Imagem do Homer Simpson">
+        </div>
+        <div class="login__form">
+            <app-titulo titulo="Login"></app-titulo>
+
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Digite seu email" name="email" ngModel>
+                <label for="senha">Senha:</label>
+                <input type="password" placeholder="Digite sua senha" name="senha" ngModel>
+                <div *ngIf="mensagemErro">
+                    <p class="error">{{ mensagemErro }}</p>
+                </div>
+                <p>Não tem uma conta? <a routerLink="/cadastrar">Criar Conta</a></p>
+                <input type="submit" value="Logar">
+            </form>
+        </div>
+    </div>
+</section>

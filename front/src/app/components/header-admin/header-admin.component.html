@@ -1,0 +1,40 @@
+<header class="header">
+    <div class="header-container">
+        <div class="header__container__imagem">
+            <img src="../../../assets/images/logo-homer-simpson.png" alt="Logo">
+        </div>
+    
+        <nav class="header__navegacao">
+            <ul>
+                <li>
+                    <a routerLink="/home" routerLinkActive="ativo">Homer</a>
+                </li>
+                <li>
+                    <a routerLink="funcionario" routerLinkActive="ativo">Funcionarios</a>
+                </li>
+                <li>
+                    <a routerLink="fornecedor" routerLinkActive="ativo">Fornecedores</a>
+                </li>
+                <li>
+                    <a routerLink="bebida" routerLinkActive="ativo">Bebidas</a>
+                </li>
+                <li>
+                    <a routerLink="comida" routerLinkActive="ativo">Comidas</a>
+                </li>
+                <li>
+                    <a routerLink="evento" routerLinkActive="ativo">Eventos</a>
+                </li>
+                <li>
+                    <a routerLink="usuario" routerLinkActive="ativo">Usuários</a>
+                </li>
+            </ul>
+        </nav>
+        <a *ngIf="!hasLogin()" routerLink="login" class="login">Entrar</a>
+        <a *ngIf="hasLogin()" (click)="logout()" class="logout">Sair</a>
+    </div>
+    
+</header>
+<section>
+
+    <router-outlet></router-outlet>
+</section>

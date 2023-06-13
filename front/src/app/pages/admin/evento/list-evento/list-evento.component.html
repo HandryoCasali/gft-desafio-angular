@@ -1,0 +1,54 @@
+<div class="tabela-container">
+    <app-titulo titulo="Eventos"></app-titulo>
+
+    <a routerLink="novo" class="btn btn-warning">Novo Evento</a>
+    <a routerLink="agendamentos" class="btn btn-warning ms-2">Agendamentos</a>
+    
+    <table class="table mt-2">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Data / Hora Início</th>
+                <th scope="col">Data / Hora Fim</th>
+                <th scope="col">Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="align-middle" *ngFor="let evento of eventos">
+                <td>{{ evento.nome }}</td>
+                <td>
+                    {{ evento.dataInicio | date: 'dd/MM/yyyy' }} -
+                    {{ evento.horaInicio }}h
+                </td>
+                <td>
+                    {{ evento.dataFim | date: 'dd/MM/yyyy' }} -
+                    {{ evento.horaFim }}h
+                </td>
+                <td>
+                    <a class="editar btn btn-warning" routerLink="editar/{{ evento._id }}">Editar</a>
+                    <a class="excluir btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalExclusao"
+                        (click)="atualizaIdModalExcluir(evento)">Excluir</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="modalExclusaoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content caixa-modal">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalExclusaoLabel">Excluir Cadastro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Realmente deseja excluir o cadastro?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                        (click)="delete()">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

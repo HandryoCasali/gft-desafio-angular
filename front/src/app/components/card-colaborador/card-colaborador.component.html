@@ -1,0 +1,13 @@
+<div class="card-container">
+    <div class="card__imagem">
+        <img src= "{{ imagem }}" alt="Imagem do colaborador">
+    </div>
+    <div class="card__content">
+        <h3 class="card__nome">{{ nome }}</h3>
+        <p class="card__descricao">
+            <span *ngIf="idade" class="card__descricao__idade">{{ idade }} anos</span>
+            <span class="card__descricao__cargo">{{ cargo }}</span>
+            <span class="card__descricao__hobbie">Hobbie: {{ hobbie }}</span>
+        </p>
+    </div>
+</div>

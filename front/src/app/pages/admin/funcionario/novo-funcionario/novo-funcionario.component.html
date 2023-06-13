@@ -1,0 +1,60 @@
+<section class="cadastrar">
+    <div class="cadastrar-container">
+        <div class="cadastrar__form">
+            <app-titulo titulo="Novo Funcionário"></app-titulo>
+
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <div>
+                    <label for="nome">Nome: <span>*</span></label>
+                    <input type="text" placeholder="Digite o nome" name="nome" required [(ngModel)]="funcionario.nome" #nome="ngModel">
+                    <div *ngIf="(!nome.valid && nome.touched) || (!nome.valid && form.submitted)">
+                        <span>Nome é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="foto">Foto: <span>*</span></label>
+                    <input type="text" placeholder="Cole a url da foto" name="foto" required [(ngModel)]="funcionario.foto" #foto="ngModel">
+                    <div *ngIf="(!foto.valid && foto.touched) || (!foto.valid && form.submitted)">
+                        <span>Url da foto é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="idade">Idade: <span>*</span></label>
+                    <input type="number" placeholder="Digite a idade" name="idade" required [(ngModel)]="funcionario.idade" #idade="ngModel">
+                    <div *ngIf="(!idade.valid && idade.touched) || (!idade.valid && form.submitted)">
+                        <span>Idade é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="cargo">Cargo: <span>*</span></label>
+                    <input type="text" placeholder="Digite o cargo" name="cargo" required [(ngModel)]="funcionario.cargo" #cargo="ngModel">
+                    <div *ngIf="(!cargo.valid && cargo.touched) || (!cargo.valid && form.submitted)">
+                        <span>Cargo é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="hobbie">Hobbie: <span>*</span></label>
+                    <input type="text" placeholder="Digite o hobbie" name="hobbie" [(ngModel)]="funcionario.hobbie" required #hobbie="ngModel">
+                    <div *ngIf="(!hobbie.valid && hobbie.touched) || (!hobbie.valid && form.submitted)">
+                        <span>Hobbie é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="naturalidade">Naturalidade: <span>*</span></label>
+                    <input type="text" placeholder="Digite a naturalidade" name="naturalidade" [(ngModel)]="funcionario.naturalidade" required #naturalidade="ngModel">
+                    <div *ngIf="(!naturalidade.valid && naturalidade.touched) || (!naturalidade.valid && form.submitted)">
+                        <span>Naturalidade é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="anoAdmissao">Ano Admissão: <span>*</span></label>
+                    <input type="number" placeholder="Digite o ano de admissão" name="anoAdmissao" required [(ngModel)]="funcionario.anoAdmissao" #ano="ngModel">
+                    <div *ngIf="(!ano.valid && ano.touched) || (!ano.valid && form.submitted)">
+                        <span>Ano Admissão é obrigatório.</span>
+                    </div>
+                </div>
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
+</section>

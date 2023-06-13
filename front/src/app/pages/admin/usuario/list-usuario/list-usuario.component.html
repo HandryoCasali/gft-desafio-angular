@@ -1,0 +1,50 @@
+<div class="tabela-container">
+    <app-titulo titulo="Usuarios"></app-titulo>
+   
+    <div *ngIf="mensagem">
+      <p class="alert alert-success">{{ mensagem }}</p>
+    </div>
+    <table class="table mt-2">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Email</th>
+          <th scope="col">Admin</th>
+          <th scope="col">Opções</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="align-middle" *ngFor="let usuario of usuarios">
+          <td>{{ usuario.nome }}</td>
+          <td>{{ usuario.cpf }}</td>
+          <td>{{ usuario.telefone }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>{{ usuario.isAdmin ? 'Sim' : 'Não' }}</td>
+          <td>
+            <a class="editar btn btn-warning" (click)="tornarAdmin(usuario)">Tornar Admin</a>
+            <a class="excluir btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalExclusao"
+              (click)="atualizaIdModalExcluir(usuario)">Excluir</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="modal fade" id="modalExclusao" tabindex="-1" aria-labelledby="modalExclusaoLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content caixa-modal">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalExclusaoLabel">Excluir Cadastro</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Realmente deseja excluir o cadastro?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="delete()">Excluir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

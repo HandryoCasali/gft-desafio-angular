@@ -1,0 +1,23 @@
+<div class="tabela-container">
+    <app-titulo titulo="Agendamentos"></app-titulo>
+
+    <table class="table mt-2">
+      <thead>
+        <tr>
+          <th scope="col" class="col-md-4">Nome Evento</th>
+          <th scope="col" class="col-md-3">Nome Cliente</th>
+          <th scope="col" class="col-md-3">Data</th>
+          <th scope="col" class="col-md-2">Hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="align-middle" *ngFor="let agendamento of agendamentos">
+          <td>{{ agendamento.nomeEvento }}</td>
+          <td>{{ agendamento.nomeUsuario }}</td>
+          <td>{{ agendamento.data | date: 'dd/MM/yyyy'}}</td>
+          <td>{{ agendamento.hora }}h</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>

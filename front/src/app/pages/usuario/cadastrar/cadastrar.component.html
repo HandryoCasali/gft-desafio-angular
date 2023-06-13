@@ -1,0 +1,50 @@
+<section class="cadastrar">
+    <div class="cadastrar-container">
+        <div class="cadastrar__form">
+            <app-titulo titulo="Cadastrar"></app-titulo>
+
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)" id="form">
+                <div>
+                    <p class="requiridos">Campos requiridos: <span>*</span></p>
+                </div>
+                <div>
+                    <label for="nome">Nome: <span>*</span></label>
+                    <input type="text" placeholder="Digite seu nome" name="nome" required ngModel #nome="ngModel">
+                    <div *ngIf="(!nome.valid && nome.touched) || (!nome.valid && form.submitted)">
+                        <span>Nome é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="email">Email: <span>*</span></label>
+                    <input type="email" placeholder="Digite seu email" name="email" required email ngModel #email="ngModel">
+                    <div *ngIf="(!email.valid && email.touched) || (!email.valid && form.submitted)">
+                        <span>Email inválido.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="cpf">CPF: <span>*</span></label>
+                    <input type="text" placeholder="Digite seu CPF" name="cpf" required ngModel #cpf="ngModel">
+                    <div *ngIf="(!cpf.valid && cpf.touched) || (!cpf.valid && form.submitted)">
+                        <span>CPF inválido.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="telefone">Telefone: </label>
+                    <input type="tel" placeholder="Digite o numero do seu telefone" name="telefone" ngModel>
+                </div>
+                <div>
+                    <label for="senha">Senha: <span>*</span></label>
+                    <input type="password" placeholder="Digite sua senha" name="senha" required ngModel #senha="ngModel">
+                    <div *ngIf="(!senha.valid && senha.touched) || (!senha.valid && form.submitted)">
+                        <span>Senha é obrigatório.</span>
+                    </div>
+                </div>
+                <div *ngIf="mensagemErro">
+                    <span>{{ mensagemErro }}</span>
+                </div>
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
+</section>
+

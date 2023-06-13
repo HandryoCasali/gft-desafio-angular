@@ -1,0 +1,22 @@
+<section>
+
+    <app-titulo titulo="Eventos"></app-titulo>
+
+    <div class="eventos">
+        <ul>
+            <li *ngFor="let evento of eventos">
+                <app-card-evento 
+                    urlFoto="{{ evento.foto }}" 
+                    nome="{{ evento.nome }}" 
+                    descricao="{{ evento.descricao }}"
+                    dataInicio="{{ evento.dataInicio | date: 'dd/MM/yyyy' }}"
+                    dataTermino="{{ evento.dataFim | date: 'dd/MM/yyyy' }}" 
+                    horaInicio="{{ evento.horaInicio }}"
+                    horaTermino="{{ evento.horaFim }}"
+                    idEvento="{{ evento._id }}"    
+                ></app-card-evento>
+            </li>
+        </ul>
+    </div>
+
+</section>

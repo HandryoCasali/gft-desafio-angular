@@ -1,0 +1,33 @@
+<section class="cadastrar">
+    <div class="cadastrar-container">
+        <div class="cadastrar__form">
+            <app-titulo titulo="Novo Fornecedor"></app-titulo>
+
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <div>
+                    <label for="nome">Nome: <span>*</span></label>
+                    <input type="text" placeholder="Digite o nome" name="nome" required [(ngModel)]="fornecedor.nome" #nome="ngModel">
+                    <div *ngIf="(!nome.valid && nome.touched) || (!nome.valid && form.submitted)">
+                        <span>Nome é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="foto">Foto: <span>*</span></label>
+                    <input type="text" placeholder="Cole a url da foto" name="foto" required [(ngModel)]="fornecedor.foto" #foto="ngModel">
+                    <div *ngIf="(!foto.valid && foto.touched) || (!foto.valid && form.submitted)">
+                        <span>Foto é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="descricao">Descrição: <span>*</span></label>
+                    <input type="text" placeholder="Digite a descricao" name="descricao" required [(ngModel)]="fornecedor.descricao" #descricao="ngModel">
+                    <div *ngIf="(!descricao.valid && descricao.touched) || (!descricao.valid && form.submitted)">
+                        <span>Descrição é obrigatório.</span>
+                    </div>
+                </div>
+                
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
+</section>

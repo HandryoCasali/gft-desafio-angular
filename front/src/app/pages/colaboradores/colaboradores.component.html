@@ -1,0 +1,13 @@
+<section>
+    <app-titulo titulo="Nossos Colaboradores"></app-titulo>
+
+    <div class="colaboradores">
+        <ul>
+            <li *ngFor="let colaborador of colaboradores">
+                <app-card-colaborador imagem="{{ colaborador.foto }}" nome="{{ colaborador.nome }}"
+                    idade="{{ colaborador.idade }}" cargo="{{ colaborador.cargo }}"
+                    hobbie="{{ colaborador.hobbie }}"></app-card-colaborador>
+            </li>
+        </ul>
+    </div>
+</section>

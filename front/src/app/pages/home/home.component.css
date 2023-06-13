@@ -1,0 +1,121 @@
+.home {
+    background-image: url('../../../assets/images/bg-homer.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - var(--height-header));
+}
+
+.home-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.home__content {
+    text-align: right;
+    width: 50%;
+    height: 60%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content__titulo .destaque {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.content__titulo {
+    width: 100%;
+    font-size: 3em;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.content__descricao {
+    color: var(--cor-principal);
+    font-family: var(--font-family-secundario);
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.content__link {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: bold;
+    background-color: var(--preto1);
+    padding: .6em 1em;
+    border-radius: 15px;
+    box-shadow: 8px 10px 8px rgba(0, 0, 0, .25);
+
+    transition: .1s ease-in;
+}
+
+.content__link:hover {
+    background-color: var(--preto2);
+    color: var(--link-hover);
+    transform: scale(1.02);
+    box-shadow: 4px 6px 8px rgba(0, 0, 0, .25);
+}
+
+@media screen and (max-width: 1300px) {
+    .home-container {
+        max-width: 1100px;
+        padding: 0 2em;
+    }
+
+    .home__content {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .home-container {
+        justify-content: center;
+    }
+
+    .home-container::content {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .home__content {
+        width: 70%;
+        text-align: center;
+    }
+
+    .content__titulo {
+        font-size: 2.6em;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .content__titulo {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .content__titulo {
+        font-size: 1.2em;
+    }
+
+    .home__content {
+        height: 100%;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .content__descricao {
+        font-size: 0.9em;
+    }
+
+    .content__link {
+        font-size: 1em;
+        border-radius: 5px;
+    }
+}

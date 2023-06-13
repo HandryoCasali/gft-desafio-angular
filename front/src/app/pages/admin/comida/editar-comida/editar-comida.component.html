@@ -1,0 +1,39 @@
+<section class="cadastrar">
+    <div class="cadastrar-container">
+        <div class="cadastrar__form">
+            <app-titulo titulo="Editar Comida"></app-titulo>
+
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <label for="nome">Nome: <span>*</span></label>
+                    <input type="text" placeholder="Digite o nome" name="nome" required [(ngModel)]="comida.nome" #nome="ngModel">
+                    <div *ngIf="(!nome.valid && nome.touched) || (!nome.valid && form.submitted)">
+                        <span>Nome é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="foto">Foto: <span>*</span></label>
+                    <input type="text" placeholder="Cole a url da foto" name="foto" required [(ngModel)]="comida.foto" #foto="ngModel">
+                    <div *ngIf="(!foto.valid && foto.touched) || (!foto.valid && form.submitted)">
+                        <span>Foto é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="descricao">Descrição: <span>*</span></label>
+                    <input type="text" placeholder="Digite a descrição" name="descricao" required [(ngModel)]="comida.descricao" #descricao="ngModel">
+                    <div *ngIf="(!descricao.valid && descricao.touched) || (!descricao.valid && form.submitted)">
+                        <span>Descrição é obrigatório.</span>
+                    </div>
+                </div>
+                <div>
+                    <label for="preco">Preço: <span>*</span></label>
+                    <input type="number" placeholder="Digite o preço" name="preco" required [(ngModel)]="comida.preco" #preco="ngModel">
+                    <div *ngIf="(!preco.valid && preco.touched) || (!preco.valid && form.submitted)">
+                        <span>Preço é obrigatório.</span>
+                    </div>
+                </div>
+                <input type="submit" value="Editar">
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,144 @@
+:root {
+    --preto1: #1C1C1C;
+    --preto2: #242424;
+    --preto3: #313131;
+    --linha-titulo: #656565;
+    --cor-principal: #FFFFFF;
+    --cor-secundaria: #CCCCCC;
+    --link-hover: #DBC64E;
+    --font-family-principal: 'Poppins', sans-serif;
+    --font-family-secundario: 'Fira Code', monospace;
+    
+    --height-header: 104px;
+}
+
+*, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--cor-principal);
+    font-family: var(--font-family-principal);
+}
+
+a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* Formularios */
+.cadastrar {
+    background-color: var(--preto3);
+    min-height: calc(100vh - var(--height-header));
+    display: flex;
+    align-items: center;
+}
+
+.cadastrar-container {
+    background-color: var(--preto2);
+    max-width: 1000px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+
+.cadastrar__form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.cadastrar__form > form {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    margin-top: 2em; 
+}
+
+.cadastrar__form > form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cadastrar__form span {
+    color: red;
+}
+
+.cadastrar__form .requiridos {
+    margin-bottom: 1em;
+    font-weight: 500;
+}
+
+.cadastrar__form input:not(input[type="submit"]) {
+    padding: .5em;
+    background-color: var(--preto2);
+    outline: none;
+    border: none;
+    border-bottom: 3px solid var(--preto1);
+    font-size: 1em;
+}
+
+.cadastrar__form form .ng-invalid.ng-touched,
+.cadastrar__form form.ng-submitted  .ng-invalid {
+    border-bottom: 3px solid red; 
+}
+
+input[type="submit"] {
+    margin-top: 2em;
+    background-color: var(--preto1);
+    border: none;
+    font-size: 1em;
+    padding: 1em;
+    font-weight: 500; 
+    cursor: pointer;
+    transition: .2s ease-in;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--preto3);
+}
+
+input::placeholder {
+    color: var(--cor-secundaria);
+}
+
+/* listas layout admin */
+.tabela-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 3em;
+}
+
+.excluir {
+    margin-left: 1em;
+}
+
+.caixa-modal {
+    background-color: var(--preto3);
+}
+
+@media screen and (max-width: 1000px){
+    .tabela-container {
+        margin: 0 2em;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .tabela-container {
+        margin: 0 2em;
+    }
+
+    .excluir {
+        margin: 10px 0 0 0;
+    }
+    
+
+}

@@ -1,0 +1,20 @@
+section {
+    background-color: var(--preto3);
+    padding: 2em 0;
+    min-height: calc(100vh - var(--height-header));
+}
+
+.eventos ul {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    
+    max-width: 1000px;
+    width: 80%;
+    margin: 3em auto 1em;
+}
+
+.eventos li {
+    list-style: none;
+    margin-bottom: 20px;
+}
